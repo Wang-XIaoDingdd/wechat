@@ -1,2 +1,14 @@
-<!--pages/catalog/catalog.wxml-->
-<text>pages/catalog/catalog.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">课程分类</view>
+        <view class="page__desc">按类别检索选修课</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <button class="weui-btn" type="default">校公选课</button>
+        <button class="weui-btn" type="default">拓展英语</button>
+        <button class="weui-btn" type="default">科技实践</button>
+        <button class="weui-btn" type="default">艺术实践</button>
+        <button class="weui-btn" type="default">文化实践</button>
+        <button class="weui-btn" type="default">体育选课</button>
+    </view>
+</view>
