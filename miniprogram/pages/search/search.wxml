@@ -43,4 +43,11 @@
             </navigator>
         </view>
     </view>
+
+    <view  data-id="{{id}}" >
+        <input value="请输入" placeholder="输入为空" bindtap="add"
+        />
+        <button type="primary"  >新增记录
+        </button>
+    </view>
 </view>
