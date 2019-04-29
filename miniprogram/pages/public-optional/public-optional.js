@@ -1,4 +1,5 @@
-// pages/public-optional/public-optional.js
+// var base64 = require("/miniprogram/dist/example/images/base64.js");
+
 Page({
 
   /**
@@ -11,8 +12,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    // this.setData({
+    //             icon20: base64.icon20,
+    //             icon60: base64.icon60
+    //         });
   },
 
   /**
