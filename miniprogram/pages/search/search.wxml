@@ -66,6 +66,6 @@
 
     <slider name="slider" show-value >选择你的分数</slider>
 
-    <button formType="submit">搜索</button>
+    <button formType="submit">通过form提交至数据库</button>
     <button formType="reset">清空</button>
 </form>

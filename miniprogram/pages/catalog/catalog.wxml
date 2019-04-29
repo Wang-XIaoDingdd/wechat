@@ -1,3 +1,9 @@
+<block wx:for="{{arr}}">
+    <!-- <view >{{item}}</view> -->
+    <view >{{index}}:{{item.count}}</view>
+    <view >{{index}}:{{item.evaluation}}</view>
+</block>
+
 <form bindsubmit="formsubmit" bindreset="formreset">
 
     <radio-group name="radiogroup">

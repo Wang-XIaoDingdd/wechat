@@ -1,12 +1,11 @@
 // pages/catalog/catalog.js
 var search=""
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    arr:[],
   },
   formsubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
@@ -14,13 +13,16 @@ Page({
     var info = e.detail.value;
     const db = wx.cloud.database();      //建立引用
     search = e.detail.value.slider;
+    console.log(search)
     db.collection('record').where({
       _openid: this.data.openid,
       score:search,
     }).get({
       success: res => {
         this.setData({
-          queryResult: JSON.stringify(res.data, null, 2)
+          queryResult: JSON.stringify(res.data, null, 2),
+          arr:res.data,
+
         })
         console.log('[数据库] [查询记录] 成功: ', res)
       },
@@ -32,6 +34,7 @@ Page({
         console.error('[数据库] [查询记录] 失败：', err)
       }
     })
+    
   },
 
   formreset: function () {
