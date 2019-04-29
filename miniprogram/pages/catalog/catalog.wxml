@@ -24,12 +24,12 @@
     </view>
     <view class="page__bd page__bd_spacing">
 
-        <button class="weui-btn" type="default">校公选课</button>
-        <button class="weui-btn" type="default">拓展英语</button>
-        <button class="weui-btn" type="default">科技实践</button>
-        <button class="weui-btn" type="default">艺术实践</button>
-        <button class="weui-btn" type="default">文化实践</button>
-        <button class="weui-btn" type="default">体育选课</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage1">校公选课</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage2">拓展英语</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage3">科技实践</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage4">艺术实践</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage5">文化实践</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage6">体育选课</button>
     </view>
 </view>
 

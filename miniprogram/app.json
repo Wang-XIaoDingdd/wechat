@@ -1,6 +1,12 @@
 {
   "pages": [
     "pages/search/search",
+    "pages/english/english",
+    "pages/tech-prac/tech-prac",
+    "pages/art-prac/art-prac",
+    "pages/ltera-prac/ltera-prac",
+    "pages/PE/PE",
+    "pages/public-optional/public-optional",
     "pages/index/index",
     "pages/mine/mine",
     "pages/catalog/catalog",

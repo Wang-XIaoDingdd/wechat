@@ -7,6 +7,38 @@ Page({
   data: {
     arr:[],
   },
+  //一系列按钮跳转
+  jumpPage1:function(){  
+    wx.navigateTo({
+      url:'/pages/public-optional/public-optional',
+    })
+  },
+  jumpPage2:function(){  
+    wx.navigateTo({
+      url:'/pages/english/english',
+    })
+  },
+  jumpPage3:function(){  
+    wx.navigateTo({
+      url:'/pages/tech-prac/tech-prac',
+    })
+  },
+  jumpPage4:function(){  
+    wx.navigateTo({
+      url:'/pages/art-prac/art-prac',
+    })
+  },
+  jumpPage5:function(){  
+    wx.navigateTo({
+      url:'/pages/ltera-prac/ltera-prac',
+    })
+  },
+  jumpPage6:function(){  
+    wx.navigateTo({
+      url:'/pages/PE/PE',
+    })
+  },
+
   formsubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     console.log(e.detail.value.radiogroup,e.detail.value.slider)
