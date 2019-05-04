@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/search/search",
+    "pages/class-movie/class-movie",
     "pages/english/english",
     "pages/tech-prac/tech-prac",
     "pages/art-prac/art-prac",

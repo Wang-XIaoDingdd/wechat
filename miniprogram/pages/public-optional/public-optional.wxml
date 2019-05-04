@@ -14,7 +14,7 @@
                     <view class="weui-media-box__info">
                         <view class="weui-media-box__info__meta">08-09-10节</view>
                         <view class="weui-media-box__info__meta">2-12周</view>
-                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">良乡2-B101</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">良乡2-B101</view><navigator url='/pages/class-movie/class-movie'>详细信息</navigator>
                     </view>
                 </view>
             </view>

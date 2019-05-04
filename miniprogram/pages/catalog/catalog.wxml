@@ -2,6 +2,7 @@
     <!-- <view >{{item}}</view> -->
     <view >{{index}}:{{item.count}}</view>
     <view >{{index}}:{{item.evaluation}}</view>
+    <view >{{index}}:{{item.score}}</view>
 </block>
 
 <form bindsubmit="formsubmit" bindreset="formreset">

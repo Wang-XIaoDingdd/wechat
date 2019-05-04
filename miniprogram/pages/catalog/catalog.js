@@ -57,7 +57,7 @@ Page({
     console.log(searchName)
     db.collection('record').where({
       _openid: this.data.openid,
-      name:searchName,
+      evaluation:searchName,
       score:searchScore,
     }).get({
       success: res => {
