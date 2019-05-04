@@ -1,2 +1,23 @@
-<!--pages/english/english.wxml-->
-<text>pages/english/english.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">拓展英语</view>
+        <view class="page__desc">Below</view>
+    </view>
+    <view class="page__bd">
+        
+        <view class="weui-panel">
+            
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">西方哲学</view>
+                    <view class="weui-media-box__desc">Noel Mann</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">06-07节</view>
+                        <view class="weui-media-box__info__meta">1-16周</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">良乡2-B303</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

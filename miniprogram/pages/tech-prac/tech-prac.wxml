@@ -1,2 +1,23 @@
-<!--pages/tech-prac/tech-prac.wxml-->
-<text>pages/tech-prac/tech-prac.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">科技实践</view>
+        <view class="page__desc">Below</view>
+    </view>
+    <view class="page__bd">
+        
+        <view class="weui-panel">
+            
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">微信小程序设计与制作</view>
+                    <view class="weui-media-box__desc">李宏儒</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">11-12-13节</view>
+                        <view class="weui-media-box__info__meta">3-13周</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">良乡图书馆四层3号机房</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

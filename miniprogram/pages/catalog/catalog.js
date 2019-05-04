@@ -1,5 +1,6 @@
 // pages/catalog/catalog.js
-var search=""
+var searchScore=""
+var searchName=""
 Page({
   /**
    * 页面的初始数据
@@ -39,16 +40,25 @@ Page({
     })
   },
 
+//输入框
+  bindKeyInput(e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+
   formsubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    console.log(e.detail.value.radiogroup,e.detail.value.slider)
+    console.log(e.detail.value.input, e.detail.value.slider)
     var info = e.detail.value;
     const db = wx.cloud.database();      //建立引用
-    search = e.detail.value.slider;
-    console.log(search)
+    searchScore = e.detail.value.slider;
+    searchName = e.detail.value.input;
+    console.log(searchName)
     db.collection('record').where({
       _openid: this.data.openid,
-      score:search,
+      name:searchName,
+      score:searchScore,
     }).get({
       success: res => {
         this.setData({

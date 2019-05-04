@@ -1,5 +1,14 @@
 const app = getApp()
 var text = ""
+// var classes = [
+//       {name:'西方电影叙事入门'},
+//       {name:'西方哲学'},
+//       {name:'微信小程序设计与制作'},
+//       {name:'吉他入门'},
+//       {name:'日语二外'},
+//       {name:'网球'}
+//     ];
+
 Page({
     data: {
         inputShowed: false,
@@ -8,6 +17,28 @@ Page({
         counterId:"",
         id:"",
     },
+    // function allclasses(){
+    //   var contentHtml = '';
+    //   for(var i = 0; i < classes.length; i++){
+    //     contentHtml += '<div class="weui-cell"><div class="weui-cell__bd"><p>'+classes[i].name+'</p></div></div>'
+    //   }
+    //   $(".content").html(contentHtml);
+    // },
+
+    // //显示搜索内容
+    // function find(InputVal){
+    //   allclasses()
+    //   var text = InputVal
+    //         $('.weui-cell').each(function () {
+    //             var $self = $(this);
+    //             var flag = $self.text().search(text);
+    //             if (flag > -1) {
+    //                 $self.css("display", "");
+    //             } else {
+    //                 $self.css("display", "none");
+    //             }
+    //     });
+    // },
     input: function(e)
     {
         this.setData({
@@ -18,15 +49,16 @@ Page({
         console.log("显示一下：",text
         )
     },
+
     formsubmit: function (e) {
       console.log('form发生了submit事件，携带数据为：', e.detail.value)
-      console.log(e.detail.value.radiogroup,e.detail.value.slider)
+      console.log(e.detail.value.input,e.detail.value.slider)
       var info = e.detail.value;
       const db = wx.cloud.database()      //建立引用
       db.collection('record').add({     //使用collection
         data: {
           count: 1,
-          evaluation: e.detail.value.radiogroup,
+          evaluation: e.detail.value.input,
           score:e.detail.value.slider,
         },
 
@@ -116,6 +148,8 @@ Page({
         })
       }
     },
+
+
 
     showInput: function () {
         this.setData({

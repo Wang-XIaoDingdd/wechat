@@ -1,2 +1,23 @@
-<!--pages/art-prac/art-prac.wxml-->
-<text>pages/art-prac/art-prac.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">艺术实践</view>
+        <view class="page__desc">Below</view>
+    </view>
+    <view class="page__bd">
+        
+        <view class="weui-panel">
+            
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">吉他入门</view>
+                    <view class="weui-media-box__desc">SHAUNDA STETSON</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">08-09-10节</view>
+                        <view class="weui-media-box__info__meta">2-12周</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">良乡2-B101</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

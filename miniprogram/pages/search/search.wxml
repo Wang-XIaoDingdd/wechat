@@ -20,6 +20,7 @@
             </view>
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
+
         <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
             <navigator url="" class="weui-cell" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">
@@ -45,25 +46,17 @@
     </view>
 
     <view  data-id="{{id}}" >实时显示：{{input_score}}
-        <input value="请输入" placeholder="输入为空" bindinput="input"
-        />
-        <button type="primary" bindtap="add" >新增记录
-        </button>
+        <input value="请输入" placeholder="输入为空" bindinput="input"/>
+        <button type="primary" bindtap="add" >新增记录</button>
     </view>
-
     <view >
-    <button type="primary" bindtap="delete" >删除数据
-    </button>
+        <button type="primary" bindtap="delete" >删除数据</button>
     </view>
 </view>
 
 <form bindsubmit="formsubmit" bindreset="formreset">
 
-    <radio-group name="radiogroup">
-      <label><radio value="option1"/>选项1</label>
-      <label><radio value="option2"/>选项2</label>
-    </radio-group>
-
+    <input name="input" bindinput="bindKeyInput" placeholder="课程名称" />
     <slider name="slider" show-value >选择你的分数</slider>
 
     <button formType="submit">通过form提交至数据库</button>
