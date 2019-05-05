@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/search/search",
     "pages/class-movie/class-movie",
     "pages/english/english",
@@ -10,13 +11,15 @@
     "pages/public-optional/public-optional",
     "pages/index/index",
     "pages/mine/mine",
-    "pages/catalog/catalog",
+    
     "pages/userConsole/userConsole",
+    
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib"
+    "pages/chooseLib/chooseLib",
+    "pages/catalog/catalog"
   ],
   "tabBar": {
     "color": "grey",

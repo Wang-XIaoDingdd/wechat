@@ -1,12 +1,10 @@
 // pages/catalog/catalog.js
-var searchScore=""
-var searchName=""
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    arr:[],
   },
   //一系列按钮跳转
   jumpPage1:function(){  
@@ -41,42 +39,47 @@ Page({
   },
 
 //输入框
-  bindKeyInput(e) {
-    this.setData({
-      inputValue: e.detail.value
-    })
-  },
+  
+  // input: function(e)
+  // {
+  //     this.setData({
+  //       input_score: e.detail.value
+  //     })
+  //     var text = e.detail.value;
+  //     console.log("显示一下：",text
+  //     )
+  // },
 
   formsubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    console.log(e.detail.value.input, e.detail.value.slider)
     var info = e.detail.value;
-    const db = wx.cloud.database();      //建立引用
-    searchScore = e.detail.value.slider;
-    searchName = e.detail.value.input;
-    console.log(searchName)
-    db.collection('record').where({
-      _openid: this.data.openid,
-      evaluation:searchName,
-      score:searchScore,
-    }).get({
-      success: res => {
-        this.setData({
-          queryResult: JSON.stringify(res.data, null, 2),
-          arr:res.data,
+    const db = wx.cloud.database()      //建立引用
+    db.collection('record').add({     //使用collection
+      data: {
+        classname:e.detail.value.classname,
+        evaluation: e.detail.value.evaluation,
+        score:e.detail.value.slider,
+      },
 
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        this.setData({
+          counterId: res._id,
+          count: 1
         })
-        console.log('[数据库] [查询记录] 成功: ', res)
+        wx.showToast({
+          title: '新增记录成功',
+        })
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id,input_score)
       },
       fail: err => {
         wx.showToast({
           icon: 'none',
-          title: '查询记录失败'
+          title: '新增记录失败'
         })
-        console.error('[数据库] [查询记录] 失败：', err)
+        console.error('[数据库] [新增记录] 失败：', err)
       }
     })
-    
   },
 
   formreset: function () {
@@ -115,6 +118,7 @@ Page({
       }
     })
   },
+  
   find: function() {
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters

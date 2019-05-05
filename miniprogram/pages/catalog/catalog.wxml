@@ -1,20 +1,23 @@
-<block wx:for="{{arr}}">
-    <!-- <view >{{item}}</view> -->
-    <view >{{index}}:{{item.count}}</view>
-    <view >{{index}}:{{item.evaluation}}</view>
-    <view >{{index}}:{{item.score}}</view>
-</block>
+<!-- <view  data-id="{{id}}" >实时显示：{{input_score}}
+        <input value="请输入" placeholder="输入为空" bindinput="input"/>
+        <button type="primary" bindtap="add" >新增记录</button>
+    </view>
+    <view >
+        <button type="primary" bindtap="delete" >删除数据</button>
+</view> -->
 
 <form bindsubmit="formsubmit" bindreset="formreset">
 
-    <view class="section">
-      <view class="section__title">你输入的是：{{inputValue}}</view>
-      <input name="input" bindinput="bindKeyInput" placeholder="输入同步到view中" />
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
     </view>
-
+  </picker>
+    <input name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" />
+    <input name="evaluation" placeholder="请填写课程评价" />
     <slider name="slider" show-value >选择你的分数</slider>
 
-    <button formType="submit">搜索</button>
+    <button formType="submit">提交此次评价</button>
     <button formType="reset">清空</button>
 </form>
 

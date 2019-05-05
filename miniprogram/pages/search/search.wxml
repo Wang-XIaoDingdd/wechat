@@ -45,20 +45,30 @@
         </view>
     </view>
 
-    <view  data-id="{{id}}" >实时显示：{{input_score}}
-        <input value="请输入" placeholder="输入为空" bindinput="input"/>
-        <button type="primary" bindtap="add" >新增记录</button>
-    </view>
-    <view >
-        <button type="primary" bindtap="delete" >删除数据</button>
-    </view>
 </view>
+
+    
+
+<block wx:for="{{arr}}">
+    <!-- <view >{{item}}</view> -->
+    <view>第{{index+1}}条评价：</view>
+    <view >评价：{{item.evaluation}}</view>
+    <view >给分：{{item.score}}</view>
+</block>
+<view>{{searchcomplete}}</view>
 
 <form bindsubmit="formsubmit" bindreset="formreset">
 
-    <input name="input" bindinput="bindKeyInput" placeholder="课程名称" />
-    <slider name="slider" show-value >选择你的分数</slider>
+    <view class="section">
+      <view class="section__title">输入查询的课程名：{{inputValue}}</view>
+      <input name="input" bindinput="bindKeyInput" placeholder="输入同步到view中" />
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
+    </view>
 
-    <button formType="submit">通过form提交至数据库</button>
+    <button formType="submit">搜索</button>
     <button formType="reset">清空</button>
 </form>
