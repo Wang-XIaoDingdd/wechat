@@ -54,6 +54,10 @@
     <view>第{{index+1}}条评价：</view>
     <view >评价：{{item.evaluation}}</view>
     <view >给分：{{item.score}}</view>
+
+    <view >评价：{{item.col1}}</view>
+    <view >给分：{{item.col2}}</view>
+    <view >给分：{{item.col3}}</view>
 </block>
 <view>{{searchcomplete}}</view>
 
@@ -62,11 +66,14 @@
     <view class="section">
       <view class="section__title">输入查询的课程名：{{inputValue}}</view>
       <input name="input" bindinput="bindKeyInput" placeholder="输入同步到view中" />
-      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <view class="picker">
-      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
-    </view>
-  </picker>
+      
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
+        value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
+            <view class="picker">
+            当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+             <!-- multiarray[0]这个数组中，下标为multiindex[0]的数据 -->
+            </view>
+        </picker>
     </view>
 
     <button formType="submit">搜索</button>

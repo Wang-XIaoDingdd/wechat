@@ -11,9 +11,7 @@
     "pages/public-optional/public-optional",
     "pages/index/index",
     "pages/mine/mine",
-    
     "pages/userConsole/userConsole",
-    
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",

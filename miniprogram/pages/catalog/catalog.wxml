@@ -8,15 +8,19 @@
 
 <form bindsubmit="formsubmit" bindreset="formreset">
 
-    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <view class="picker">
-      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
-    </view>
-  </picker>
+    
     <input name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" />
     <input name="evaluation" placeholder="请填写课程评价" />
-    <slider name="slider" show-value >选择你的分数</slider>
 
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
+        value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
+            <view class="picker">
+            当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+             <!-- multiarray[0]这个数组中，下标为multiindex[0]的数据 -->
+            </view>
+        </picker>
+        
+    <slider name="slider" show-value >选择你的分数</slider>
     <button formType="submit">提交此次评价</button>
     <button formType="reset">清空</button>
 </form>

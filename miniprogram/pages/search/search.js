@@ -2,6 +2,7 @@ const app = getApp()
 var text = ""
 var searchScore=0
 var searchName=""
+var choice =[0,0,0]
 // var classes = [
 //       {name:'西方电影叙事入门'},
 //       {name:'西方哲学'},
@@ -64,6 +65,7 @@ Page({
       ]
     ],
         multiIndex: [0, 0, 0],
+        //这里data中的数据是给出一个初值！！
     },
     bindKeyInput(e) {
       this.setData({
@@ -75,16 +77,20 @@ Page({
       console.log(e.detail.value.input)
       const db = wx.cloud.database();      //建立引用
       searchName = e.detail.value.input;
+      // var index1 = multiArray[0][multiIndex[0]];
+      // var index2 = multiArray[1][multiIndex[1]];
+      // var index3 = multiArray[2][multiIndex[2]];
       console.log(searchName)
       db.collection('record').where({
         _openid: this.data.openid,
-        classname:searchName,
+        // classname:searchName,
+        choice:choice,
       }).get({
         success: res => {
           this.setData({
             queryResult: JSON.stringify(res.data, null, 2),
             arr:res.data,
-  
+
           })
           console.log('[数据库] [查询记录] 成功: ', res)
         },
@@ -111,7 +117,7 @@ Page({
     bindMultiPickerChange: function (e) {
       console.log('picker发送选择改变，携带值为', e.detail.value)
       this.setData({
-        multiIndex: e.detail.value
+        multiIndex: e.detail.value  //e.detial.value返回每个选择的下标：3位的数组
       })
     },
     
@@ -121,11 +127,12 @@ Page({
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex
     };
+    console.log('multiarray:',this.data.multiArray,'multiindex',this.data.multiIndex);
     data.multiIndex[e.detail.column] = e.detail.value;
     switch (e.detail.column) {
-      case 0:
+      case 0://修改第一列
         switch (data.multiIndex[0]) {
-          case 0:
+          case 0://第一列的下标为0
             data.multiArray[1] = ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'];
             data.multiArray[2] = ['猪肉绦虫', '吸血虫'];
             break;
@@ -137,9 +144,9 @@ Page({
         data.multiIndex[1] = 0;
         data.multiIndex[2] = 0;
         break;
-      case 1:
+      case 1://修改第二列
         switch (data.multiIndex[0]) {
-          case 0:
+          case 0://第一列下标为0时
             switch (data.multiIndex[1]) {
               case 0:
                 data.multiArray[2] = ['猪肉绦虫', '吸血虫'];
@@ -158,9 +165,9 @@ Page({
                 break;
             }
             break;
-          case 1:
+          case 1://第一列的下标为1
             switch (data.multiIndex[1]) {
-              case 0:
+              case 0://第二列的下标为0时
                 data.multiArray[2] = ['鲫鱼', '带鱼'];
                 break;
               case 1:
@@ -176,6 +183,7 @@ Page({
         console.log(data.multiIndex);
         break;
     }
+    choice = [this.data.multiIndex[0],this.data.multiIndex[1],this.data.multiIndex[2]],
     this.setData(data);
   },
 
