@@ -3,14 +3,7 @@ var text = ""
 var searchScore=0
 var searchName=""
 var choice =[0,0,0]
-// var classes = [
-//       {name:'西方电影叙事入门'},
-//       {name:'西方哲学'},
-//       {name:'微信小程序设计与制作'},
-//       {name:'吉他入门'},
-//       {name:'日语二外'},
-//       {name:'网球'}
-//     ];
+
 
 Page({
     data: {
