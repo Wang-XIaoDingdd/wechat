@@ -1,17 +1,19 @@
-<form bindsubmit="formsubmit" bindreset="formreset">
+<view class="page__hd">
+  <form bindsubmit="formsubmit" bindreset="formreset">
 
-    
-    <input class="weui-input" name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" />
-    <input class="weui-input" name="evaluation" placeholder="请填写课程评价" />
+      
+      <input class="weui-input" name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" />
+      <input class="weui-input" name="evaluation" placeholder="请填写课程评价" />
 
-    <picker class="weui-btn" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
-        value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
-            <view class="picker">
-              <button class="weui-btn" type="default">请选择关键词</button>
-            </view>
-        </picker>
-        
-    <slider name="slider" show-value >选择你的分数</slider>
-    <button class="weui-btn" type="default" formType="submit">提交此次评价</button>
-    <button class="weui-btn" type="default" formType="reset">清空</button>
-</form>
+      <picker class="weui-btn" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
+          value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
+              <view class="picker">
+                <button class="weui-btn" type="default">请选择关键词</button>
+              </view>
+      </picker>
+          
+      <slider name="slider" show-value >选择你的分数</slider>
+      <button class="weui-btn" type="default" formType="submit">提交此次评价</button>
+      <button class="weui-btn" type="default" formType="reset">清空</button>
+  </form>
+</view>

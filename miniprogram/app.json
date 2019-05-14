@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/search/search",
+    "pages/compulsory/compulsory",
     "pages/comment/comment",
     "pages/english/english",
     "pages/tech-prac/tech-prac",
@@ -33,10 +34,6 @@
         "selectedIconPath": "/dist/example/images/icon_nav_widget.png",
         "iconPath": "/dist/example/images/icon_nav_widget.png",
         "text": "分类"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "教程"
       }
     ]
   },

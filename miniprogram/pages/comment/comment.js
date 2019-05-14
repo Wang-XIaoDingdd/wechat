@@ -1,5 +1,5 @@
-var index1 = "校公选课"
-var index2 = "大一"
+var index1 = "必修课"
+var index2 = "公共基础课"
 var index3 = "计算机学院"
 //每列的第一个上传数据库时赋初始值
 var choice = [0, 0, 0]
@@ -8,92 +8,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    multiArray: [['校公选课', '拓展英语', '科技实践', '艺术实践', '文化实践', '体育选课'], ['大一', '大二', '大三', '大四'], ['计算机学院', '睿信书院']],
+    multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['全部']],
     objectMultiArray: [
       [
         {
           id: 0,
-          name: '校公选课'
+          name: '必修课'
         },
         {
           id: 1,
-          name: '体育选课'
+          name: '选修课'
         }
       ], [
         {
           id: 0,
-          name: '大一'
+          name: '公共基础课'
         },
         {
           id: 1,
-          name: '大二'
+          name: '专业基础课'
         },
         {
           id: 2,
-          name: '大三'
+          name: '大类基础课'
         },
         {
           id: 3,
-          name: '大四'
+          name: '专业课'
         }
       ], [
         {
           id: 0,
-          name: '计算机学院'
-        },
-        {
-          id: 1,
-          name: '睿信书院'
+          name: '全部'
         }
       ]
     ],
     multiIndex: [0, 0, 0],
     //这里data中的数据是给出一个初值！！
   },
-  //一系列按钮跳转
-  jumpPage1: function () {
-    wx.navigateTo({
-      url: '/pages/public-optional/public-optional',
-    })
-  },
-  jumpPage2: function () {
-    wx.navigateTo({
-      url: '/pages/english/english',
-    })
-  },
-  jumpPage3: function () {
-    wx.navigateTo({
-      url: '/pages/tech-prac/tech-prac',
-    })
-  },
-  jumpPage4: function () {
-    wx.navigateTo({
-      url: '/pages/art-prac/art-prac',
-    })
-  },
-  jumpPage5: function () {
-    wx.navigateTo({
-      url: '/pages/ltera-prac/ltera-prac',
-    })
-  },
-  jumpPage6: function () {
-    wx.navigateTo({
-      url: '/pages/PE/PE',
-    })
-  },
-
-  //输入框
-
-  // input: function(e)
-  // {
-  //     this.setData({
-  //       input_score: e.detail.value
-  //     })
-  //     var text = e.detail.value;
-  //     console.log("显示一下：",text
-  //     )
-  // },
-
+  
   formsubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var info = e.detail.value;
@@ -153,61 +106,58 @@ Page({
     };
     console.log('multiarray:', this.data.multiArray, 'multiindex', this.data.multiIndex);
     data.multiIndex[e.detail.column] = e.detail.value;
-    // switch (e.detail.column) {
-    //   case 0://修改第一列
-    //     switch (data.multiIndex[0]) {
-    //       case 0://第一列的下标为0
-    //         data.multiArray[1] = ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'];
-    //         data.multiArray[2] = ['猪肉绦虫', '吸血虫'];
-    //         break;
-    //       case 1:
-    //         data.multiArray[1] = ['鱼', '两栖动物', '爬行动物'];
-    //         data.multiArray[2] = ['鲫鱼', '带鱼'];
-    //         break;
-    //     }
-    //     data.multiIndex[1] = 0;
-    //     data.multiIndex[2] = 0;
-    //     break;
-    //   case 1://修改第二列
-    //     switch (data.multiIndex[0]) {
-    //       case 0://第一列下标为0时
-    //         switch (data.multiIndex[1]) {
-    //           case 0:
-    //             data.multiArray[2] = ['猪肉绦虫', '吸血虫'];
-    //             break;
-    //           case 1:
-    //             data.multiArray[2] = ['蛔虫'];
-    //             break;
-    //           case 2:
-    //             data.multiArray[2] = ['蚂蚁', '蚂蟥'];
-    //             break;
-    //           case 3:
-    //             data.multiArray[2] = ['河蚌', '蜗牛', '蛞蝓'];
-    //             break;
-    //           case 4:
-    //             data.multiArray[2] = ['昆虫', '甲壳动物', '蛛形动物', '多足动物'];
-    //             break;
-    //         }
-    //         break;
-    //       case 1://第一列的下标为1
-    //         switch (data.multiIndex[1]) {
-    //           case 0://第二列的下标为0时
-    //             data.multiArray[2] = ['鲫鱼', '带鱼'];
-    //             break;
-    //           case 1:
-    //             data.multiArray[2] = ['青蛙', '娃娃鱼'];
-    //             break;
-    //           case 2:
-    //             data.multiArray[2] = ['蜥蜴', '龟', '壁虎'];
-    //             break;
-    //         }
-    //         break;
-    //     }
+    switch (e.detail.column) {
+      case 0://修改第一列
+        switch (data.multiIndex[0]) {
+          case 0://第一列的下标为0
+            data.multiArray[1] = ['公共基础课', '专业基础课', '大类基础课', '专业课'];
+            data.multiArray[2] = ['全部'];
+            break;
+          case 1:
+            data.multiArray[1] = ['通识课', '体育课', '实践课'];
+            data.multiArray[2] = ['全部'];
+            break;
+        }
+        data.multiIndex[1] = 0;
+        data.multiIndex[2] = 0;
+        break;
+      case 1://修改第二列
+        switch (data.multiIndex[0]) {
+          case 0://第一列下标为0时
+            switch (data.multiIndex[1]) {
+              case 0:
+                data.multiArray[2] = ['全部'];
+                break;
+              case 1:
+                data.multiArray[2] = ['全部'];
+                break;
+              case 2:
+                data.multiArray[2] = ['全部'];
+                break;
+              case 3:
+                data.multiArray[2] = ['全部'];
+                break;
+            }
+            break;
+          case 1://第一列的下标为1
+            switch (data.multiIndex[1]) {
+              case 0://第二列的下标为0时
+                data.multiArray[2] = ['全部'];
+                break;
+              case 1:
+                data.multiArray[2] = ['全部'];
+                break;
+              case 2:
+                data.multiArray[2] = ['科技实践', '艺术实践', '文化实践'];
+                break;
+            }
+            break;
+        }
 
-    //     data.multiIndex[2] = 0;
-    //     console.log(data.multiIndex);
-    //     break;
-    // }
+        data.multiIndex[2] = 0;
+        console.log(data.multiIndex);
+        break;
+    }
       index1 = this.data.multiArray[0][this.data.multiIndex[0]],
       index2 = this.data.multiArray[1][this.data.multiIndex[1]],
       index3 = this.data.multiArray[2][this.data.multiIndex[2]],

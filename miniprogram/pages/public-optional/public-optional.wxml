@@ -15,7 +15,6 @@
                         <view class="weui-media-box__info__meta">08-09-10节</view>
                         <view class="weui-media-box__info__meta">2-12周</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">良乡2-B101</view>
-                        <navigator url='/pages/comment/comment'>撰写评价</navigator>
                     </view>                  
                 </view>
             </view>

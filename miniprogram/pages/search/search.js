@@ -14,49 +14,41 @@ Page({
         id:"",
         arr:[],
         searchcomplete:"",
-        multiArray: [['无脊柱动物', '脊柱动物'], ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'], ['猪肉绦虫', '吸血虫']],
+        multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['全部']],
         objectMultiArray: [
-      [
-        {
-          id: 0,
-          name: '无脊柱动物'
-        },
-        {
-          id: 1,
-          name: '脊柱动物'
-        }
-      ], [
-        {
-          id: 0,
-          name: '扁性动物'
-        },
-        {
-          id: 1,
-          name: '线形动物'
-        },
-        {
-          id: 2,
-          name: '环节动物'
-        },
-        {
-          id: 3,
-          name: '软体动物'
-        },
-        {
-          id: 3,
-          name: '节肢动物'
-        }
-      ], [
-        {
-          id: 0,
-          name: '猪肉绦虫'
-        },
-        {
-          id: 1,
-          name: '吸血虫'
-        }
-      ]
-    ],
+          [
+            {
+              id: 0,
+              name: '必修课'
+            },
+            {
+              id: 1,
+              name: '选修课'
+            }
+          ], [
+            {
+              id: 0,
+              name: '公共基础课'
+            },
+            {
+              id: 1,
+              name: '专业基础课'
+            },
+            {
+              id: 2,
+              name: '大类基础课'
+            },
+            {
+              id: 3,
+              name: '专业课'
+            }
+          ], [
+            {
+              id: 0,
+              name: '全部'
+            }
+          ]
+        ],
         multiIndex: [0, 0, 0],
         //这里data中的数据是给出一个初值！！
     },
@@ -76,7 +68,7 @@ Page({
       console.log(searchName)
       db.collection('record').where({
         _openid: this.data.openid,
-        // classname:searchName,
+        classname:searchName,
         choice:choice,
       }).get({
         success: res => {
@@ -126,12 +118,12 @@ Page({
       case 0://修改第一列
         switch (data.multiIndex[0]) {
           case 0://第一列的下标为0
-            data.multiArray[1] = ['扁性动物', '线形动物', '环节动物', '软体动物', '节肢动物'];
-            data.multiArray[2] = ['猪肉绦虫', '吸血虫'];
+            data.multiArray[1] = ['公共基础课', '专业基础课', '大类基础课', '专业课'];
+            data.multiArray[2] = ['全部'];
             break;
           case 1:
-            data.multiArray[1] = ['鱼', '两栖动物', '爬行动物'];
-            data.multiArray[2] = ['鲫鱼', '带鱼'];
+            data.multiArray[1] = ['通识课', '体育课', '实践课'];
+            data.multiArray[2] = ['全部'];
             break;
         }
         data.multiIndex[1] = 0;
@@ -142,36 +134,34 @@ Page({
           case 0://第一列下标为0时
             switch (data.multiIndex[1]) {
               case 0:
-                data.multiArray[2] = ['猪肉绦虫', '吸血虫'];
+                data.multiArray[2] = ['全部'];
                 break;
               case 1:
-                data.multiArray[2] = ['蛔虫'];
+                data.multiArray[2] = ['全部'];
                 break;
               case 2:
-                data.multiArray[2] = ['蚂蚁', '蚂蟥'];
+                data.multiArray[2] = ['全部'];
                 break;
               case 3:
-                data.multiArray[2] = ['河蚌', '蜗牛', '蛞蝓'];
-                break;
-              case 4:
-                data.multiArray[2] = ['昆虫', '甲壳动物', '蛛形动物', '多足动物'];
+                data.multiArray[2] = ['全部'];
                 break;
             }
             break;
           case 1://第一列的下标为1
             switch (data.multiIndex[1]) {
               case 0://第二列的下标为0时
-                data.multiArray[2] = ['鲫鱼', '带鱼'];
+                data.multiArray[2] = ['全部'];
                 break;
               case 1:
-                data.multiArray[2] = ['青蛙', '娃娃鱼'];
+                data.multiArray[2] = ['全部'];
                 break;
               case 2:
-                data.multiArray[2] = ['蜥蜴', '龟', '壁虎'];
+                data.multiArray[2] = ['科技实践', '艺术实践', '文化实践'];
                 break;
             }
             break;
         }
+
         data.multiIndex[2] = 0;
         console.log(data.multiIndex);
         break;

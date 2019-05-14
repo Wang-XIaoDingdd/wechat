@@ -1,80 +1,35 @@
 <view class="page">
     <view class="page__hd">
-        <view class="page__title">检索选修课</view>
+        <view class="page__title">检索课程</view>
         <view class="page__desc">查看评价</view>
     </view>
-    <view class="page__bd">
-        <view class="weui-search-bar">
-            <view class="weui-search-bar__form">
-                <view class="weui-search-bar__box">
-                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-                        <icon type="clear" size="14"></icon>
-                    </view>
-                </view>
-                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-                    <icon class="weui-icon-search" type="search" size="14"></icon>
-                    <view class="weui-search-bar__text">搜索</view>
-                </label>
-            </view>
-            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-        </view>
-
-        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-            <navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator>
-        </view>
-    </view>
-
 </view>
-
-    
 
 <block wx:for="{{arr}}">
     <!-- <view >{{item}}</view> -->
     <view>第{{index+1}}条评价：</view>
     <view >评价：{{item.evaluation}}</view>
-    <view >给分：{{item.score}}</view>
+    <view >评分：{{item.score}}</view>
 
-    <view >课程分类：{{item.col1}}</view>
-    <view >点评来自一位{{item.col3}} {{item.col2}}的同学</view>
+    <view >课程分类：{{item.col1}} {{item.col3}} {{item.col2}}</view>
 </block>
 <view>{{searchcomplete}}</view>
 
 <form bindsubmit="formsubmit" bindreset="formreset">
-
+  <view class="page__hd">
     <view class="section">
       <view class="section__title">输入查询的课程名：{{inputValue}}</view>
-      <input name="input" bindinput="bindKeyInput" placeholder="输入同步到view中" />
+      <input class="weui-input" name="input" bindinput="bindKeyInput" placeholder="输入课程名称" />
       
         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
         value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
             <view class="picker">
-            当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
-             <!-- multiarray[0]这个数组中，下标为multiindex[0]的数据 -->
+              <button class="weui-btn" type="default">请选择关键词</button>
             </view>
         </picker>
     </view>
 
-    <button formType="submit">搜索</button>
-    <button formType="reset">清空</button>
+    <button class="weui-btn" formType="submit">搜索</button>
+    <button class="weui-btn" formType="reset">清空</button>
+  </view>
 </form>

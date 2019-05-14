@@ -1,12 +1,5 @@
-<!-- <view  data-id="{{id}}" >实时显示：{{input_score}}
-        <input value="请输入" placeholder="输入为空" bindinput="input"/>
-        <button type="primary" bindtap="add" >新增记录</button>
-    </view>
-    <view >
-        <button type="primary" bindtap="delete" >删除数据</button>
-</view> -->
 
-<form bindsubmit="formsubmit" bindreset="formreset">
+<!-- <form bindsubmit="formsubmit" bindreset="formreset">
 
     
     <input name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" />
@@ -16,14 +9,13 @@
         value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
             <view class="picker">
             当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
-             <!-- multiarray[0]这个数组中，下标为multiindex[0]的数据 -->
             </view>
         </picker>
         
     <slider name="slider" show-value >选择你的分数</slider>
     <button formType="submit">提交此次评价</button>
     <button formType="reset">清空</button>
-</form>
+</form> -->
 
 <view class="page">
     <view class="page__hd">
@@ -37,6 +29,9 @@
         <button class="weui-btn" type="default" bindtap="jumpPage4">艺术实践</button>
         <button class="weui-btn" type="default" bindtap="jumpPage5">文化实践</button>
         <button class="weui-btn" type="default" bindtap="jumpPage6">体育选课</button>
+        <button class="weui-btn" type="default" bindtap="jumpPage8">必修课程</button>
+        <button class="weui-btn" type="" bindtap="jumpPage7">撰写评价</button>
+        
     </view>
 </view>
 
