@@ -25,15 +25,21 @@
     "list": [
       {
         "pagePath": "pages/search/search",
-        "selectedIconPath": "/dist/example/images/icon_nav_special.png",
-        "iconPath": "//dist/example/images/icon_nav_special.png",
+        "selectedIconPath": "/dist/example/images/icon_nav_search.png",
+        "iconPath": "/dist/example/images/icon_nav_search.png",
         "text": "搜索"
       },
       {
         "pagePath": "pages/catalog/catalog",
+        "selectedIconPath": "/dist/example/images/icon_nav_form.png",
+        "iconPath": "/dist/example/images/icon_nav_form.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/comment/comment",
         "selectedIconPath": "/dist/example/images/icon_nav_widget.png",
         "iconPath": "/dist/example/images/icon_nav_widget.png",
-        "text": "分类"
+        "text": "评价"
       }
     ]
   },

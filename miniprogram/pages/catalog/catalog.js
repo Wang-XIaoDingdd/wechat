@@ -86,11 +86,6 @@ Page({
       url:'/pages/PE/PE',
     })
   },
-  jumpPage7: function () {
-    wx.navigateTo({
-      url: '/pages/comment/comment',
-    })
-  },
   jumpPage8: function () {
     wx.navigateTo({
       url: '/pages/compulsory/compulsory',

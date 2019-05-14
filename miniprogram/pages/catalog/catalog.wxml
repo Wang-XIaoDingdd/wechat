@@ -30,8 +30,6 @@
         <button class="weui-btn" type="default" bindtap="jumpPage5">文化实践</button>
         <button class="weui-btn" type="default" bindtap="jumpPage6">体育选课</button>
         <button class="weui-btn" type="default" bindtap="jumpPage8">必修课程</button>
-        <button class="weui-btn" type="" bindtap="jumpPage7">撰写评价</button>
-        
     </view>
 </view>
 

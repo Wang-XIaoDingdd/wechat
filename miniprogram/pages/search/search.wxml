@@ -18,7 +18,7 @@
 <form bindsubmit="formsubmit" bindreset="formreset">
   <view class="page__hd">
     <view class="section">
-      <view class="section__title">输入查询的课程名：{{inputValue}}</view>
+      <view class="section__title">输入查询的课程名：</view>
       <input class="weui-input" name="input" bindinput="bindKeyInput" placeholder="输入课程名称" />
       
         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
