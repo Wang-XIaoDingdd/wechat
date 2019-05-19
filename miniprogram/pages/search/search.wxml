@@ -11,20 +11,19 @@
     <view >评价：{{item.evaluation}}</view>
     <view >评分：{{item.score}}</view>
 
-    <view >课程分类：{{item.col1}} {{item.col3}} {{item.col2}}</view>
+    <view >课程分类：{{item.col1}} {{item.col2}} {{item.col3}}</view>
 </block>
 <view>{{searchcomplete}}</view>
 
 <form bindsubmit="formsubmit" bindreset="formreset">
   <view class="page__hd">
+  <view class="page__title">选择查询的课程名：</view>
     <view class="section">
-      <view class="section__title">输入查询的课程名：</view>
-      <input class="weui-input" name="input" bindinput="bindKeyInput" placeholder="输入课程名称" />
-      
+      <!-- <input class="weui-input" name="input" bindinput="bindKeyInput" placeholder="输入课程名称" /> -->
         <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
         value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
             <view class="picker">
-              <button class="weui-btn" type="default">请选择关键词</button>
+              <button class="weui-btn" type="default">请选择课程</button>
             </view>
         </picker>
     </view>

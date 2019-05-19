@@ -68,7 +68,7 @@ Page({
       console.log(searchName)
       db.collection('record').where({
         _openid: this.data.openid,
-        classname:searchName,
+        // classname:searchName,
         choice:choice,
       }).get({
         success: res => {

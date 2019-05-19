@@ -1,6 +1,6 @@
 var index1 = "必修课"
 var index2 = "公共基础课"
-var index3 = "计算机学院"
+var index3 = "全部"
 //每列的第一个上传数据库时赋初始值
 var choice = [0, 0, 0]
 Page({
@@ -57,7 +57,7 @@ Page({
     // var index3 = multiArray[2][multiIndex[2]];
     db.collection('record').add({     //使用collection
       data: {
-        classname: e.detail.value.classname,
+        // classname: e.detail.value.classname,
         evaluation: e.detail.value.evaluation,
         score: e.detail.value.slider,
         choice: choice,

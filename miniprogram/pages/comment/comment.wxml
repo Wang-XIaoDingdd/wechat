@@ -1,16 +1,16 @@
 <view class="page__hd">
   <form bindsubmit="formsubmit" bindreset="formreset">
 
-      
-      <input class="weui-input" name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" />
-      <input class="weui-input" name="evaluation" placeholder="请填写课程评价" />
-
       <picker class="weui-btn" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
           value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
               <view class="picker">
-                <button class="weui-btn" type="default">请选择关键词</button>
+                <button class="weui-btn" type="default">请选择课程</button>
               </view>
       </picker>
+      <!-- <input class="weui-input" name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" /> -->
+      <input class="weui-input" name="evaluation" placeholder="请填写课程评价" />
+
+      
           
       <slider name="slider" show-value >选择你的分数</slider>
       <button class="weui-btn" type="default" formType="submit">提交此次评价</button>
