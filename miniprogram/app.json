@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/search/search",
+    "pages/result/result",
     "pages/compulsory/compulsory",
     "pages/comment/comment",
     "pages/english/english",

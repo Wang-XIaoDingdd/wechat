@@ -1,6 +1,6 @@
 var index1 = "必修课"
 var index2 = "公共基础课"
-var index3 = "全部"
+var index3 = "大学物理A1"
 //每列的第一个上传数据库时赋初始值
 var choice = [0, 0, 0]
 Page({
@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['全部']],
+    multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['大学物理A1']],
     objectMultiArray: [
       [
         {
@@ -39,7 +39,7 @@ Page({
       ], [
         {
           id: 0,
-          name: '全部'
+          name: '大学物理A1'
         }
       ]
     ],
@@ -111,11 +111,11 @@ Page({
         switch (data.multiIndex[0]) {
           case 0://第一列的下标为0
             data.multiArray[1] = ['公共基础课', '专业基础课', '大类基础课', '专业课'];
-            data.multiArray[2] = ['全部'];
+            data.multiArray[2] = ['大学物理A1'];
             break;
           case 1:
             data.multiArray[1] = ['通识课', '体育课', '实践课'];
-            data.multiArray[2] = ['全部'];
+            data.multiArray[2] = ['古希腊文学赏析'];
             break;
         }
         data.multiIndex[1] = 0;
@@ -126,29 +126,29 @@ Page({
           case 0://第一列下标为0时
             switch (data.multiIndex[1]) {
               case 0:
-                data.multiArray[2] = ['全部'];
+                data.multiArray[2] = ['大学物理A1'];
                 break;
               case 1:
-                data.multiArray[2] = ['全部'];
+                data.multiArray[2] = ['离散数学上'];
                 break;
               case 2:
-                data.multiArray[2] = ['全部'];
+                data.multiArray[2] = ['C语言程序设计'];
                 break;
               case 3:
-                data.multiArray[2] = ['全部'];
+                data.multiArray[2] = ['最优化方法'];
                 break;
             }
             break;
           case 1://第一列的下标为1
             switch (data.multiIndex[1]) {
               case 0://第二列的下标为0时
-                data.multiArray[2] = ['全部'];
+                data.multiArray[2] = ['古希腊文学赏析'];
                 break;
               case 1:
-                data.multiArray[2] = ['全部'];
+                data.multiArray[2] = ['网球'];
                 break;
               case 2:
-                data.multiArray[2] = ['科技实践', '艺术实践', '文化实践'];
+                data.multiArray[2] = ['法语二外'];
                 break;
             }
             break;

@@ -28,7 +28,7 @@
         </picker>
     </view>
 
-    <button class="weui-btn" formType="submit">搜索</button>
+    <button class="weui-btn" formType="submit" bindtap="jumpPage">搜索</button>
     <button class="weui-btn" formType="reset">清空</button>
   </view>
 </form>
