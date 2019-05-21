@@ -4,7 +4,7 @@
       <picker class="weui-btn" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
           value="{{multiIndex}}" range="{{multiArray}}" name="MultiPicker">
               <view class="picker">
-                <button class="weui-btn" type="default">请选择课程</button>
+                <button class="weui-btn" type="default">{{multiArray[2][multiIndex[2]]}}</button>
               </view>
       </picker>
       <!-- <input class="weui-input" name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" /> -->

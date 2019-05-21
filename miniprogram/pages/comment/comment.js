@@ -1,6 +1,6 @@
 var index1 = "必修课"
 var index2 = "公共基础课"
-var index3 = "大学物理A1"
+var index3 = "请选择课程"
 //每列的第一个上传数据库时赋初始值
 var choice = [0, 0, 0]
 Page({
@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['大学物理A1']],
+    multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['请选择课程','大学物理A1']],
     objectMultiArray: [
       [
         {
@@ -39,6 +39,10 @@ Page({
       ], [
         {
           id: 0,
+          name: '请选择课程'
+        },
+        {
+          id: 1,
           name: '大学物理A1'
         }
       ]
@@ -111,7 +115,7 @@ Page({
         switch (data.multiIndex[0]) {
           case 0://第一列的下标为0
             data.multiArray[1] = ['公共基础课', '专业基础课', '大类基础课', '专业课'];
-            data.multiArray[2] = ['大学物理A1'];
+            data.multiArray[2] = ['请选择课程','大学物理A1'];
             break;
           case 1:
             data.multiArray[1] = ['通识课', '体育课', '实践课'];
@@ -126,7 +130,7 @@ Page({
           case 0://第一列下标为0时
             switch (data.multiIndex[1]) {
               case 0:
-                data.multiArray[2] = ['大学物理A1'];
+                data.multiArray[2] = ['请选择课程','大学物理A1'];
                 break;
               case 1:
                 data.multiArray[2] = ['离散数学上'];

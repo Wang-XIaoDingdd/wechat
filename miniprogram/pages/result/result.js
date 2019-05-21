@@ -1,18 +1,19 @@
 // pages/result/result.js
+// var pre_choice = wx.getStorageSync('choice')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    'pre_choice': ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // pre_choice = wx.getStorageSync('choice')
   },
 
   /**
@@ -26,7 +27,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var choice = wx.getStorageSync('choice');
+    this.setData({
+      'pre_choice' : choice
+    });
   },
 
   /**

@@ -4,7 +4,6 @@ var searchScore=0
 var searchName=""
 var choice =[0,0,0]
 
-
 Page({
     data: {
         inputShowed: false,
@@ -14,7 +13,7 @@ Page({
         id:"",
         arr:[],
         searchcomplete:"",
-        multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['大学物理A1']],
+        multiArray: [['必修课', '选修课'], ['公共基础课', '专业基础课', '大类基础课', '专业课'], ['请选择课程', '大学物理A1']],
         objectMultiArray: [
           [
             {
@@ -45,6 +44,10 @@ Page({
           ], [
             {
               id: 0,
+              name: '请选择课程'
+            },
+            {
+              id: 1,
               name: '大学物理A1'
             }
           ]
@@ -54,6 +57,9 @@ Page({
     },
 
     jumpPage: function () {
+      wx.removeStorageSync('choice'),
+      this.onShow,
+      wx.setStorageSync('choice', choice),
       wx.navigateTo({
         url: '/pages/result/result',
       })
@@ -125,7 +131,7 @@ Page({
         switch (data.multiIndex[0]) {
           case 0://第一列的下标为0
             data.multiArray[1] = ['公共基础课', '专业基础课', '大类基础课', '专业课'];
-            data.multiArray[2] = ['大学物理A1'];
+            data.multiArray[2] = ['请选择课程','大学物理A1'];
             break;
           case 1:
             data.multiArray[1] = ['通识课', '体育课', '实践课'];
@@ -140,7 +146,7 @@ Page({
           case 0://第一列下标为0时
             switch (data.multiIndex[1]) {
               case 0:
-                data.multiArray[2] = ['大学物理A1'];
+                data.multiArray[2] = ['请选择课程','大学物理A1'];
                 break;
               case 1:
                 data.multiArray[2] = ['离散数学上'];
@@ -173,10 +179,9 @@ Page({
         break;
     }
     choice = [this.data.multiIndex[0],this.data.multiIndex[1],this.data.multiIndex[2]],
+    wx.setStorageSync('choice', choice),
     this.setData(data);
   },
-
-
     add:function(e){
   
       const db = wx.cloud.database()      //建立引用
@@ -256,6 +261,9 @@ Page({
         this.setData({
             inputVal: ""
         });
+    },
+    onShow: function () {
+      
     },
     inputTyping: function (e) {
         this.setData({
