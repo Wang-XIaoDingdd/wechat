@@ -52,6 +52,14 @@ Page({
   },
   
   formsubmit: function (e) {
+    if(choice[0]==0 && choice[1]==0 && choice[2]==0)
+      {
+        wx.showToast({
+          icon: 'none',
+          title:  "你没有选择课程！"
+        })
+        return
+      }
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var info = e.detail.value;
     const db = wx.cloud.database()      //建立引用

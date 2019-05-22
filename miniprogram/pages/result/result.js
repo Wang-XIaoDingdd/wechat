@@ -1,5 +1,3 @@
-// pages/result/result.js
-// var pre_choice = wx.getStorageSync('choice')
 Page({
 
   /**
@@ -13,7 +11,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // pre_choice = wx.getStorageSync('choice')
+    
   },
 
   /**
@@ -31,6 +29,30 @@ Page({
     this.setData({
       'pre_choice' : choice
     });
+      const db = wx.cloud.database();      //建立引用
+      db.collection('record').where({
+        _openid: this.data.openid,
+        // classname:searchName,
+        choice:choice,
+      }).get({
+        success: res => {
+          this.setData({
+            queryResult: JSON.stringify(res.data, null, 2),
+            arr:res.data,
+          })
+          console.log('arr：：', arr)
+          console.log('[数据库] [查询记录] 成功: ', res)
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        }
+      })
+      this.setData({
+        searchcomplete: "已经查询完毕所有内容！"});
   },
 
   /**

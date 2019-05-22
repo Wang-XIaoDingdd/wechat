@@ -55,8 +55,26 @@ Page({
         multiIndex: [0, 0, 0],
         //这里data中的数据是给出一个初值！！
     },
-
+   equal : function(a, b) 
+   {
+      // 判断数组的长度
+      if (a.length !== b.length) {
+          return false
+      } else {
+        // 循环遍历数组的值进行比较
+          for (let i = 0; i < a.length; i++) {
+              if (a[i] !== b[i]) {
+                  return false
+              }
+          }
+          return true;
+      }
+    },
     jumpPage: function () {
+      if(choice[0]==0 && choice[1]==0 && choice[2]==0)
+      {
+        return
+      }
       wx.removeStorageSync('choice'),
       this.onShow,
       wx.setStorageSync('choice', choice),
@@ -70,10 +88,18 @@ Page({
       })
     },
     formsubmit: function (e) {
+      console.log('fchoice：', choice)
+      if(choice[0]==0 && choice[1]==0 && choice[2]==0)
+      {
+        wx.showToast({
+          icon:'none',
+          title: '你没有选择课程！'
+        })
+        return
+      }
+      
       console.log('form发生了submit事件，携带数据为：', e.detail.value)
-      console.log(e.detail.value.input)
       const db = wx.cloud.database();      //建立引用
-      searchName = e.detail.value.input;
       // var index1 = multiArray[0][multiIndex[0]];
       // var index2 = multiArray[1][multiIndex[1]];
       // var index3 = multiArray[2][multiIndex[2]];
@@ -86,7 +112,7 @@ Page({
         success: res => {
           this.setData({
             queryResult: JSON.stringify(res.data, null, 2),
-            arr:res.data,
+            // arr:res.data,
 
           })
           console.log('[数据库] [查询记录] 成功: ', res)

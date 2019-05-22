@@ -1,2 +1,12 @@
 <!--pages/result/result.wxml-->
-<text>{{pre_choice}}</text>
+<view wx:if="{{arr.length == 0}}"> 这门课还没有评价！</view>
+
+<block wx:for="{{arr}}" wx:key="key">
+    <!-- <view >{{item}}</view> -->
+    <view wx:if='{{index==0}}'> 课程分类：{{item.col1}} {{item.col2}} {{item.col3}} </view> 
+
+    <view>第{{index+1}}条评价：</view>
+    <view >评价：{{item.evaluation}}</view>
+    <view >评分：{{item.score}}</view>
+    
+</block>
