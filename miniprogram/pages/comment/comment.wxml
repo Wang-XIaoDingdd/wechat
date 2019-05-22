@@ -8,6 +8,7 @@
               </view>
       </picker>
       <!-- <input class="weui-input" name="classname" bindinput="bindKeyInput" placeholder="请填写课程名称" /> -->
+       <view class="page__title">输入评价：</view>
       <input class="weui-input" name="evaluation" placeholder="请填写课程评价" />
 
       

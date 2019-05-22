@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/search/search",
+    "pages/catalog/catalog",
+    "pages/comment/comment",
     "pages/result/result",
     "pages/compulsory/compulsory",
-    "pages/comment/comment",
     "pages/english/english",
     "pages/tech-prac/tech-prac",
     "pages/art-prac/art-prac",
@@ -16,13 +17,12 @@
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/catalog/catalog"
+    "pages/chooseLib/chooseLib"
   ],
   "tabBar": {
-    "color": "grey",
-    "selectedColor": "green",
-    "backgroundColor": "white",
+    "color": "#EDEDED",
+    "selectedColor": "#66CD00",
+    "backgroundColor": "#FFFFFF",
     "list": [
       {
         "pagePath": "pages/search/search",
@@ -48,7 +48,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "选修课评分系统",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

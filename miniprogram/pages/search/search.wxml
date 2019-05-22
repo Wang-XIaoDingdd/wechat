@@ -5,16 +5,6 @@
     </view>
 </view>
 
-<block wx:for="{{arr}}">
-    <!-- <view >{{item}}</view> -->
-    <view>第{{index+1}}条评价：</view>
-    <view >评价：{{item.evaluation}}</view>
-    <view >评分：{{item.score}}</view>
-
-    <view >课程分类：{{item.col1}} {{item.col2}} {{item.col3}}</view>
-</block>
-<view>{{searchcomplete}}</view>
-
 <form bindsubmit="formsubmit" bindreset="formreset">
   <view class="page__hd">
   <view class="page__title">选择查询的课程名：</view>
